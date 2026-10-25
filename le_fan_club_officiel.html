@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Fan Club Officiel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* La police la plus respectée du web */
+        body {
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+            background: repeating-linear-gradient(
+                45deg,
+                #ff00ff,
+                #ff00ff 20px,
+                #00ffff 20px,
+                #00ffff 40px
+            );
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Animations ridicules */
+        @keyframes spin-crazy {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        @keyframes bounce-wild {
+            0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+            25% { transform: translateY(-30px) scale(1.1) rotate(-10deg); }
+            50% { transform: translateY(0) scale(1) rotate(0deg); }
+            75% { transform: translateY(-30px) scale(1.1) rotate(10deg); }
+        }
+
+        @keyframes shake-extreme {
+            0% { transform: translate(2px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-2deg); }
+            20% { transform: translate(-3px, 0px) rotate(2deg); }
+            30% { transform: translate(0px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(2deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(2px, 1px) rotate(-2deg); }
+            80% { transform: translate(-1px, -1px) rotate(2deg); }
+            90% { transform: translate(2px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        @keyframes rainbow-text {
+            0% { color: #ff0000; }
+            20% { color: #ffff00; }
+            40% { color: #00ff00; }
+            60% { color: #00ffff; }
+            80% { color: #0000ff; }
+            100% { color: #ff00ff; }
+        }
+
+        .hover-spin:hover img {
+            animation: spin-crazy 0.6s linear infinite;
+        }
+
+        .hover-bounce:hover img {
+            animation: bounce-wild 0.5s ease-in-out infinite;
+        }
+
+        .hover-shake:hover img {
+            animation: shake-extreme 0.2s infinite;
+        }
+
+        .rainbow-title {
+            animation: rainbow-text 2s infinite;
+            text-shadow: 4px 4px 0px #000;
+        }
+
+        .card {
+            box-shadow: 10px 10px 0px 0px #000;
+            transition: all 0.2s;
+        }
+        
+        .card:hover {
+            box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.8);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10">
+
+    <!-- En-tête qui pique les yeux -->
+    <header class="w-full text-center mb-12">
+        <marquee scrollamount="15" class="bg-yellow-400 text-red-600 text-3xl font-bold py-2 border-y-4 border-black uppercase tracking-widest">
+            ⚠️ Attention : Contenu hautement charismatique ⚠️ Attention : Contenu hautement charismatique ⚠️
+        </marquee>
+        <h1 class="text-6xl md:text-8xl font-black mt-8 rainbow-title uppercase tracking-tighter mix-blend-hard-light">
+            Le Fan Club Officiel
+        </h1>
+        <p class="text-2xl mt-4 bg-black text-white inline-block px-6 py-2 rounded-full border-4 border-lime-400 transform -rotate-2">
+            La légende. Le mythe. L'homme.
+        </p>
+    </header>
+
+    <!-- Conteneur principal des photos -->
+    <main class="w-full max-w-7xl px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- Carte 1 : Le front -->
+        <article class="card bg-lime-400 border-8 border-black rounded-3xl p-6 text-center hover-spin cursor-pointer">
+            <h2 class="text-2xl font-bold mb-4 bg-black text-lime-400 py-2 rounded-lg border-2 border-dashed border-white">L'Observateur</h2>
+            <div class="overflow-hidden rounded-2xl border-4 border-black bg-white">
+                <img src="image_26eb3d.jpg" alt="Gros plan front" class="w-full h-80 object-cover object-top transition-transform duration-300">
+            </div>
+            <p class="mt-6 text-xl font-bold text-black bg-white py-3 px-2 rounded-xl border-4 border-black transform rotate-2">
+                "L'angle parfait : Un front à toute épreuve" 👽
+            </p>
+        </article>
+
+        <!-- Carte 2 : La bouche ouverte -->
+        <article class="card bg-pink-500 border-8 border-black rounded-3xl p-6 text-center hover-bounce cursor-pointer mt-0 md:mt-12">
+            <h2 class="text-2xl font-bold mb-4 bg-yellow-300 text-black py-2 rounded-lg border-2 border-dashed border-black">Le Penseur</h2>
+            <div class="overflow-hidden rounded-2xl border-4 border-black bg-white">
+                <img src="image_26eb5a.jpg" alt="Bouche ouverte" class="w-full h-80 object-cover object-center transition-transform duration-300">
+            </div>
+            <p class="mt-6 text-xl font-bold text-black bg-cyan-300 py-3 px-2 rounded-xl border-4 border-black transform -rotate-3">
+                "La bouche ouverte : Quand tu comprends rien à la vie" 🤤
+            </p>
+        </article>
+
+        <!-- Carte 3 : La muscu -->
+        <article class="card bg-cyan-400 border-8 border-black rounded-3xl p-6 text-center hover-shake cursor-pointer">
+            <h2 class="text-2xl font-bold mb-4 bg-red-500 text-white py-2 rounded-lg border-2 border-dashed border-black">Le Spartiate</h2>
+            <div class="overflow-hidden rounded-2xl border-4 border-black bg-white">
+                <img src="image_26ebb8.jpg" alt="Salle de muscu" class="w-full h-80 object-cover object-center transition-transform duration-300">
+            </div>
+            <p class="mt-6 text-xl font-bold text-black bg-yellow-400 py-3 px-2 rounded-xl border-4 border-black transform rotate-1">
+                "Pas mal le cavu : La muscu ça paye (ou pas)" 🍑🏋️‍♂️
+            </p>
+        </article>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="mt-20 text-center w-full pb-8">
+        <button onclick="alert('Tu as cliqué ? Il est déjà trop tard, ton écran est maintenant béni par cette beauté.')" class="bg-yellow-400 hover:bg-yellow-300 text-black font-black text-2xl py-4 px-10 rounded-full border-8 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-transform active:scale-95 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] animate-bounce">
+            CLIQUE ICI POUR REJOINDRE LE FAN CLUB !
+        </button>
+        <p class="mt-8 text-white font-bold bg-black inline-block px-4 py-1 rounded">
+            Créé avec 100% de sarcasme et d'amitié.
+        </p>
+    </footer>
+
+</body>
+</html>
